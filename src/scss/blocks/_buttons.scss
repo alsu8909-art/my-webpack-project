@@ -1,0 +1,62 @@
+.button1,
+.button2,
+.button3,
+.button4,
+.button5,
+.button6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #7e7e82;
+  font-size: 16px;
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 6px;
+  margin-left: 16px;
+}
+
+.button1 {
+  flex: 0 0 auto;
+  width: 246px;
+  border: 2px solid #b8ffec;
+}
+
+.button2 {
+  flex: 0 0 auto;
+  width: 211px;
+  border: none;
+}
+
+.button3 {
+  flex: 0 0 auto;
+  width: 143px;
+}
+
+.button4 {
+  flex: 0 0 auto;
+  width: 233px;
+}
+
+.button5 {
+  flex: 0 0 auto;
+  width: 191px;
+}
+
+.button6 {
+  flex: 0 0 auto;
+  width: 95px;
+  background-color: #f8f8f8;
+}
+
+@media (min-width: 1120px) {
+  .button1,
+  .button2,
+  .button3,
+  .button4,
+  .button5,
+  .button6 {
+    margin-left: 16px;
+  }
+}

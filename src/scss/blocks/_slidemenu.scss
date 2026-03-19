@@ -1,0 +1,30 @@
+.slidemenu {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  margin: 24px 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slidemenu button {
+  flex-shrink: 0;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 0;
+  border: none;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.slidemenu button:first-child {
+  border: 2px solid #b8ffec;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.slidemenu p {
+  font-size: 16px;
+  color: #7e7e82;
+}

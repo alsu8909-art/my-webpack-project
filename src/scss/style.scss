@@ -1,17 +1,13 @@
-$bgColor: #24292e;
-$text: #fff;
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'blocks/header';
+@import 'blocks/mobile-menu';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
-}
+@import 'blocks/buttons';
+@import 'blocks/brands';
+@import 'blocks/modals';
+@import 'blocks/price';
+@import 'blocks/repair-tech';
+@import 'blocks/content.scss';

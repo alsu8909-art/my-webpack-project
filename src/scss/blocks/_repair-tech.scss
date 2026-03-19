@@ -1,0 +1,23 @@
+.repair-tech {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+}
+
+.repair-tech__item {
+  background-color: #f8f8f8;
+  padding: 16px;
+  border-radius: 6px;
+  width: calc(33.33% - 16px);
+}
+
+.repair-tech__title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1b1c21;
+}
+
+.repair-tech__description {
+  font-size: 14px;
+  color: #7e7e82;
+}

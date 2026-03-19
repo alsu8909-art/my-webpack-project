@@ -1,0 +1,29 @@
+// основные стили
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'TT Lakes', sans-serif;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 597px;
+  width: 100%;
+  line-height: 1.4;
+  background-color: #f8f8f8;
+}
+
+.text,
+.content__desktop,
+.content__1120 {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1b1c21;
+}

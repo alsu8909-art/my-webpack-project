@@ -1,0 +1,60 @@
+.brands {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.brands__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  height: 72px;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #b8ffec;
+    box-shadow: 0 2px 10px rgba(184, 255, 236, 0.3);
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 40px;
+    object-fit: contain;
+  }
+}
+
+.brands__card-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff3e79;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #ff3e79;
+    border-bottom: 2px solid #ff3e79;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    background: #ff3e79;
+  }
+
+  &:hover::after {
+    border-color: white;
+  }
+}
