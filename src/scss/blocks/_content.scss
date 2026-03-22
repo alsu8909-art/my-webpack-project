@@ -1,40 +1,40 @@
 .content {
   margin-top: 24px;
-}
 
-.content__text {
-  margin: 0 16px;
-  display: flex;
-  flex-direction: column;
-}
+  &__text {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+  }
 
-.content__desktop,
-.content__1120 {
-  display: none;
-}
+  &__desktop,
+  &__1120 {
+    display: none;
+  }
 
-.readmore:checked ~ .content__desktop,
-.readmore:checked ~ .content__1120 {
-  display: block;
-}
+  .readmore {
+    display: none;
 
-.text {
-  width: 100%;
-  max-width: 288px;
-  font-size: 14px;
-  margin: 0;
-}
+    &:checked ~ .content__desktop,
+    &:checked ~ .content__1120 {
+      display: block;
+    }
+  }
 
-.readmore {
-  display: none;
-}
+  .readmore__readmoremb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 
-.readmore__readmoremb {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-  margin-top: 10px;
+  .picture__copy {
+    width: 100%;
+    height: auto;
+    margin: 16px 0 35px 0;
+    display: block;
+  }
 }
 
 @media (min-width: 768px) {
@@ -43,28 +43,58 @@
     gap: 24px;
     padding: 0 24px;
     align-items: flex-start;
-  }
-  .content__desktop {
-    display: block;
-    margin-top: 16px;
-  }
-  .picture__copy {
-    width: 360px;
-    height: 208px;
-    border-radius: 8px;
-    margin: 0;
-  }
-  .readmore {
-    margin-top: 16px;
-  }
-  .readmore__readmoremb {
-    order: 1;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .readmore {
+      margin-top: 16px;
+    }
+
+    .readmore__readmoremb {
+      order: 1;
+    }
+
+    .content__desktop {
+      display: block;
+      margin-top: 16px;
+    }
+
+    .content__1120 {
+      display: none;
+    }
+
+    .picture__copy {
+      width: 360px;
+      height: 208px;
+      border-radius: 8px;
+      margin: 0;
+    }
   }
 }
 
 @media (min-width: 1120px) {
-  .picture__copy {
-    width: 531px;
-    height: 307px;
+  .content {
+    &__text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .readmore__readmoremb {
+      order: 10;
+      margin-top: 16px;
+    }
+
+    .content__desktop,
+    .content__1120 {
+      display: block;
+    }
+
+    .picture__copy {
+      width: 531px;
+      height: 307px;
+    }
   }
 }

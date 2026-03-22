@@ -1,16 +1,23 @@
 .header {
   width: 100%;
-  background: linear-gradient(to right, #f8f8f8 0%, #ffffff 100%);
-  box-shadow: inset 0 6px 4px -2px #b8ffec;
+  background-color: $color-white;
+  box-shadow: 0 1px 0 $border-color;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    gap: 12px;
+  }
 }
 
-.header__inner {
-  width: 100%;
+.container {
+  height: 88px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  gap: 12px;
+  justify-content: center;
 }
 
 .logo {
@@ -29,19 +36,16 @@
 .divider {
   width: 2px;
   height: 32px;
-  background-color: #eaeaea;
+  background-color: $color-border;
   border-radius: 1px;
   flex-shrink: 0;
 }
 
 .divider__desktop {
-  width: 2px;
-  height: 32px;
-  background-color: #eaeaea;
-  border-radius: 1px;
+  @extend .divider;
+  display: none;
   margin-left: 16px;
   margin-right: 16px;
-  display: none;
 }
 
 .header__buttons {
@@ -50,65 +54,23 @@
   gap: 12px;
 }
 
-/* кнопки */
-.menu__burger,
-.repair,
-.checkstatus,
-.button__call,
-.button__chat,
-.button__back {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ff3e79;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.menu__burger-line,
-.menu__burger::before,
-.menu__burger::after {
-  content: '';
-  position: absolute;
-  left: 11px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 1px;
-}
-
-.menu__burger::before {
-  top: 12px;
-  width: 18px;
-}
-.menu__burger-line {
-  top: 19px;
-  width: 10px;
-}
-.menu__burger::after {
-  top: 26px;
-  width: 14px;
-}
-
 @media (min-width: 768px) {
   .divider__desktop {
     display: block;
-    margin: 0 20px;
+    margin-left: 20px;
+    margin-right: 21px;
   }
   .divider {
     display: none;
   }
-  .button__call,
-  .button__chat,
-  .button__back {
-    display: flex;
-  }
   .header__inner {
     padding: 0 24px;
     gap: 16px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .header {
+    display: none;
   }
 }

@@ -16,7 +16,7 @@
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "dev": "webpack --mode development",
+    "dev": "webpack-dev-server --mode development",
     "start": "webpack-dev-server --mode development --open",
     "watch": "webpack --mode development --watch"
   },
@@ -53,5 +53,8 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "swiper": "^6.8.4"
   }
 }

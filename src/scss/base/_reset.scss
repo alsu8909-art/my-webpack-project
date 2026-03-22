@@ -1,11 +1,9 @@
-// основные стили
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'TT Lakes', sans-serif;
 }
 
 html {
@@ -13,17 +11,17 @@ html {
 }
 
 body {
-  min-width: 320px;
-  min-height: 597px;
-  width: 100%;
+  min-width: 320px !important;
+
+  font-family: $font-family-base;
   line-height: 1.4;
-  background-color: #f8f8f8;
+  background-color: $color-bg-light;
 }
 
 .text,
 .content__desktop,
 .content__1120 {
-  font-size: 14px;
+  font-size: $font-size-text;
   line-height: 1.4;
-  color: #1b1c21;
+  color: $color-text-dark;
 }

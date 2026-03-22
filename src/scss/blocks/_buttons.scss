@@ -1,62 +1,78 @@
-.button1,
-.button2,
-.button3,
-.button4,
-.button5,
-.button6 {
+.button,
+.repair,
+.checkstatus,
+.button__call,
+.button__chat,
+.button__back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $btn-pink;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  white-space: nowrap;
-  color: #7e7e82;
-  font-size: 16px;
-  background-color: #ffffff;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.repair-1120,
+.checkstatus-1120 {
+  width: 40px;
   height: 40px;
-  border-radius: 6px;
-  margin-left: 16px;
-}
-
-.button1 {
-  flex: 0 0 auto;
-  width: 246px;
-  border: 2px solid #b8ffec;
-}
-
-.button2 {
-  flex: 0 0 auto;
-  width: 211px;
+  border-radius: 50%;
+  background-color: $btn-pink;
   border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
 }
 
-.button3 {
-  flex: 0 0 auto;
-  width: 143px;
+.menu__burger {
+  @extend .button;
+  position: relative;
+
+  &-line,
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 11px;
+    height: 2px;
+    background-color: $btn-pink;
+    border-radius: 1px;
+  }
+
+  &-line {
+    top: 19px;
+    width: 10px;
+  }
+
+  &::before {
+    top: 12px;
+    width: 18px;
+  }
+
+  &::after {
+    top: 26px;
+    width: 14px;
+  }
 }
 
-.button4 {
-  flex: 0 0 auto;
-  width: 233px;
-}
+@media (min-width: 768px) {
+  .button__call,
+  .button__chat,
+  .button__back {
+    display: flex;
+  }
 
-.button5 {
-  flex: 0 0 auto;
-  width: 191px;
-}
-
-.button6 {
-  flex: 0 0 auto;
-  width: 95px;
-  background-color: #f8f8f8;
-}
-
-@media (min-width: 1120px) {
-  .button1,
-  .button2,
-  .button3,
-  .button4,
-  .button5,
-  .button6 {
-    margin-left: 16px;
+  .button__chat img {
+    width: 20px;
+    height: 20px;
+    display: block;
   }
 }

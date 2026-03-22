@@ -1,0 +1,33 @@
+@use '../base/variables' as *;
+
+.footer {
+  background: $color-white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  font-size: 14px;
+  color: $color-text-gray;
+
+  .text--1,
+  .text--2,
+  .text--3 {
+    margin: 0;
+  }
+
+  .text--2 {
+    color: $color-text-dark;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 32px 24px;
+  }
+}

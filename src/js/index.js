@@ -1,58 +1,6 @@
 import '../scss/style.scss'
-;('use strict')
-const swiper = new Swiper('.brands-slider', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  loop: false,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-
-  breakpoints: {
-    768: {
-      slidesPerView: 3,
-      allowTouchMove: false
-    }
-  }
-})
-
-const button = document.querySelector('.show-more')
-const wrapper = document.querySelector('.swiper-wrapper')
-
-button.addEventListener('click', () => {
-  const expanded = wrapper.classList.toggle('expanded')
-
-  button.setAttribute('aria-expanded', expanded)
-
-  button.querySelector('.show-more__text').textContent = expanded
-    ? 'Скрыть'
-    : 'Показать все'
-})
-const call = document.querySelector('.call')
-const modal = document.querySelector('.modal-call')
-const modalBack = document.querySelector('.modal-back')
-
-const closeBtn = document.querySelector('.close-call')
-
-document.addEventListener('click', openCall)
-
-function openCall(event) {
-  if (event.target.closest('.call')) {
-    modal.classList.add('modal--active')
-    modalBack.classList.add('modal-back--active')
-  }
-  if (event.target.closest('.modal-back')) {
-    modal.classList.remove('modal--active')
-    modalBack.classList.remove('modal-back--active')
-  }
-}
-
-closeBtn.addEventListener('click', closeCall)
-
-function closeCall(event) {
-  if (event.target.closest('.close-call')) {
-    modal.classList.remove('modal--active')
-    modalBack.classList.remove('modal-back--active')
-  }
-}
+import './swiper'
+import './showMore'
+import './modMenuCll'
+import './modFeedback'
+import './mobileMenu'

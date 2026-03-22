@@ -1,0 +1,64 @@
+.title__copy {
+  color: $color-text-dark;
+  width: 100%;
+  max-width: 304px;
+  height: 40px;
+  margin: 24px 16px;
+}
+
+h1 {
+  font-family: $font-family-base;
+  font-weight: $bold;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .title__copy {
+    display: flex;
+    width: 1096px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px;
+    gap: 450px;
+  }
+
+  .service-buttons-1120 {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    margin-left: 32px;
+  }
+
+  h1 {
+    width: 266px;
+    height: 40px;
+    white-space: nowrap;
+  }
+
+  .repair-1120,
+  .checkstatus-1120 {
+    display: flex;
+
+    &::before {
+      content: attr(data-label);
+      position: absolute;
+      right: 100%;
+      margin-right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: $font-family-base;
+      font-size: 16px;
+      font-weight: $medium;
+      color: $color-text-dark;
+      white-space: nowrap;
+    }
+  }
+}

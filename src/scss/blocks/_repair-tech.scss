@@ -1,23 +1,77 @@
 .repair-tech {
-  display: flex;
-  gap: 16px;
-  padding: 24px;
-}
-
-.repair-tech__item {
-  background-color: #f8f8f8;
   padding: 16px;
-  border-radius: 6px;
-  width: calc(33.33% - 16px);
 }
 
-.repair-tech__title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1b1c21;
+.tech {
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 240px;
+    height: 72px;
+    padding: 0 16px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    transition: $transition-default;
+
+    span {
+      font-size: 16px;
+      color: $color-text-dark;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      border-color: $border-color;
+      box-shadow: $box-shadow-hover;
+    }
+  }
 }
 
-.repair-tech__description {
-  font-size: 14px;
-  color: #7e7e82;
+.show {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  cursor: pointer;
+
+  &__arrow {
+    transition: transform 0.3s ease;
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: $medium;
+    color: $color-text-dark;
+    cursor: pointer;
+
+    span:last-child {
+      display: none;
+    }
+  }
+
+  &.expanded {
+    .show__arrow {
+      transform: rotate(180deg);
+    }
+    .show__btn span:first-child {
+      display: none;
+    }
+    .show__btn span:last-child {
+      display: inline;
+    }
+  }
 }

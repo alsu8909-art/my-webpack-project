@@ -4,27 +4,88 @@
   gap: 8px;
   margin: 24px 16px;
   -webkit-overflow-scrolling: touch;
+
+  button {
+    flex-shrink: 0;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 0;
+    border: none;
+    background-color: $color-bg-light;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 16px;
+
+    &:first-child {
+      border: 2px solid $border-color;
+      border-radius: 6px;
+      background-color: $color-white;
+    }
+  }
 }
 
-.slidemenu button {
-  flex-shrink: 0;
+.button1,
+.button2,
+.button3,
+.button4,
+.button5,
+.button6 {
+  flex: 0 0 auto;
   height: 40px;
-  padding: 0 16px;
-  border-radius: 0;
-  border: none;
-  background-color: #f8f8f8;
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   white-space: nowrap;
+  color: $color-text-gray;
   font-size: 16px;
 }
 
-.slidemenu button:first-child {
-  border: 2px solid #b8ffec;
+.button1 {
+  width: 246px;
   border-radius: 6px;
-  background-color: #ffffff;
+  border: 2px solid $border-color;
+}
+.button2 {
+  width: 211px;
+}
+.button3 {
+  width: 143px;
+}
+.button4 {
+  width: 233px;
+}
+.button5 {
+  width: 191px;
+}
+.button6 {
+  width: 95px;
+  background-color: $color-bg-light;
 }
 
-.slidemenu p {
-  font-size: 16px;
-  color: #7e7e82;
+@media (min-width: 768px) {
+  .button1,
+  .button2,
+  .button3,
+  .button4,
+  .button5,
+  .button6 {
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .slidemenu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    overflow: visible;
+    margin-left: 32px;
+  }
+
+  .button6 {
+    flex-basis: 100%;
+    max-width: fit-content;
+  }
 }

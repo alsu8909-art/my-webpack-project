@@ -1,3 +1,7 @@
+// ===========================
+// БАЗОВЫЕ ПЕРЕМЕННЫЕ (ваши)
+// ===========================
+
 $tablet: 768px;
 $desktop: 1120px;
 
@@ -7,6 +11,7 @@ $medium: 500;
 $bold: 700;
 $font-size-text: 14px;
 $font-size-btn: 16px;
+$font-size-h1: 28px;
 $uppercase: uppercase;
 
 $text-color-1: #1b1c21;
@@ -17,6 +22,7 @@ $background-2: #ffffff;
 $border-color: #b8ffec;
 $highlight: #41f6d7;
 $btn-pink: #ff3e79;
+$swiper: #b5b6bc;
 
 $padding-mobile: 16px;
 $padding-tablet: 24px;
@@ -25,3 +31,68 @@ $padding-desktop: 35px;
 $title-gradient: linear-gradient(-270deg, #f8f8f8 0%, #ffffff 98.61%);
 $border-1: 1px solid #b8ffec;
 $border-2: 1px solid #eaeaea;
+
+// ===========================
+// АЛИАСЫ ДЛЯ СОВМЕСТИМОСТИ
+// ===========================
+$color-primary: $btn-pink;
+$color-accent: $border-color;
+$color-bg-light: $background-1;
+$color-white: $background-2;
+$color-text-dark: $text-color-1;
+$color-text-gray: $text-color-2;
+$color-border: $border-2;
+$font-family-base: $font;
+$transition-default: all 0.3s ease;
+$box-shadow-hover: 0 2px 10px rgba(184, 255, 236, 0.3);
+
+// ===========================
+// ДОПОЛНИТЕЛЬНЫЕ РАЗМЕРЫ
+// ===========================
+// Размеры
+$min-width: 320px;
+$max-width: 2440px;
+
+// Брейкпоинты
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1366px;
+
+$font-xs: $font-size-text;
+$font-sm: $font-size-text;
+$font-md: $font-size-h1;
+$font-lg: 40px;
+
+$line-height-base: 1.4;
+$line-height-h1: 40px;
+$line-height-sm: $line-height-base;
+$line-height-md: $line-height-h1;
+
+$button-height: 40px;
+$button-radius: 50%;
+$button-radius-square: 6px;
+
+$border-radius: 6px;
+
+// ===========================
+// КНОПКИ СЛАЙДЕР-МЕНЮ (по желанию)
+// ===========================
+$button1-width: 246px;
+$button2-width: 211px;
+$button3-width: 143px;
+$button4-width: 233px;
+$button5-width: 191px;
+$button6-width: 95px;
+
+// ===========================
+// ОТСТУПЫ И КОНТЕЙНЕРЫ
+// ===========================
+$gap-base: 12px;
+$gap-large: 24px;
+$gap-xl: 32px;
+$divider-width: 2px;
+$divider-height: 32px;
+
+// ===========================
+// АНИМАЦИИ
+// ===========================
+$transition-default: all 0.3s ease;
