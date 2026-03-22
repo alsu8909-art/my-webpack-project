@@ -1,27 +1,42 @@
-const call = document.querySelector('.call')
-const modal = document.querySelector('.modal-call')
-const modalBack = document.querySelector('.modal-back')
+document.addEventListener('DOMContentLoaded', () => {
+  const callBtn = document.querySelector('.button__call') // трубка
+  const chatBtn = document.querySelector('.button__chat') // сообщение
+  const modalCall = document.querySelector('.modal-call') // модалка звонка
+  const modalFeedback = document.querySelector('.modal') // модалка обратной связи
+  const modalBack = document.querySelector('.modal-back')
+  const closeBtns = document.querySelectorAll('.modal__close')
 
-const closeBtn = document.querySelector('.close-call')
-
-document.addEventListener('click', openCall)
-
-function openCall(event) {
-  if (event.target.closest('.call')) {
-    modal.classList.add('modal--active')
-    modalBack.classList.add('modal-back--active')
+  function openModal(modal) {
+    if (modal && modalBack) {
+      modal.style.display = 'block'
+      modalBack.style.display = 'block'
+    }
   }
-  if (event.target.closest('.modal-back')) {
-    modal.classList.remove('modal--active')
-    modalBack.classList.remove('modal-back--active')
+  function closeModal(modal) {
+    if (modal && modalBack) {
+      modal.style.display = 'none'
+      modalBack.style.display = 'none'
+    }
   }
-}
 
-closeBtn.addEventListener('click', closeCall)
-
-function closeCall(event) {
-  if (event.target.closest('.close-call')) {
-    modal.classList.remove('modal--active')
-    modalBack.classList.remove('modal-back--active')
+  if (callBtn && modalCall) {
+    callBtn.addEventListener('click', () => openModal(modalCall))
   }
-}
+  if (chatBtn && modalFeedback) {
+    chatBtn.addEventListener('click', () => openModal(modalFeedback))
+  }
+
+  closeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      closeModal(modalCall)
+      closeModal(modalFeedback)
+    })
+  })
+
+  if (modalBack) {
+    modalBack.addEventListener('click', () => {
+      closeModal(modalCall)
+      closeModal(modalFeedback)
+    })
+  }
+})

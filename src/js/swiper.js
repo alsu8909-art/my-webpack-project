@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Инициализация слайдера брендов
-  if (document.querySelector('.brands-slider')) {
-    new Swiper('.brands-slider', {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      loop: false,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: {
-        768: { slidesPerView: 3, allowTouchMove: false }
-      }
-    })
-  }
+  // Слайдер брендов
+  new Swiper('.brands-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    loop: false,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    breakpoints: {
+      768: { slidesPerView: 3, allowTouchMove: false }
+    }
+  })
 
-  // Инициализация слайдера видов техники
-  if (document.querySelector('.tech')) {
+  // Слайдер видов техники
+  const techSwiper = document.querySelector('.tech')
+  if (techSwiper) {
     new Swiper('.tech', {
       slidesPerView: 'auto',
       spaceBetween: 16,
@@ -21,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  // Инициализация слайдера цен (если нужно)
-  if (document.querySelector('.price .swiper')) {
+  // Слайдер цен (если он есть)
+  const priceSwiper = document.querySelector('.price .swiper')
+  if (priceSwiper) {
     new Swiper('.price .swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
@@ -33,3 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 })
+
+// Кнопка "Показать все" для брендов
+const button = document.querySelector('.show-more')
+const wrapper = document.querySelector('.swiper-wrapper')
+if (button && wrapper) {
+  button.addEventListener('click', () => {
+    const expanded = wrapper.classList.toggle('expanded')
+    button.setAttribute('aria-expanded', expanded)
+    const textSpan = button.querySelector('.show-more__text')
+    if (textSpan) textSpan.textContent = expanded ? 'Скрыть' : 'Показать все'
+  })
+}

@@ -1,1 +1,11 @@
-@import '~swiper/swiper-bundle.css';
+// src/scss/vendors/_swiper.scss
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: $swiper;
+  opacity: 1;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  background: $btn-pink; // переменная из _variables
+}

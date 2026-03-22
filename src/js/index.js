@@ -1,6 +1,5 @@
 import '../scss/style.scss'
 import './swiper'
-import './showMore'
-import './modMenuCll'
-import './modFeedback'
 import './mobileMenu'
+import './modMenuCll' // если этот файл отвечает за модалки
+// import './modFeedback'; // удалите, если функционал дублируется
