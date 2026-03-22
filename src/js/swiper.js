@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
         768: { slidesPerView: 3, allowTouchMove: false }
       }
-    });
+    })
   }
 
   // Инициализация слайдера видов техники
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 'auto',
       spaceBetween: 16,
       pagination: { el: '.swiper-pagination', clickable: true }
-    });
+    })
   }
 
   // Инициализация слайдера цен (если нужно)
@@ -30,18 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
         768: { slidesPerView: 1, allowTouchMove: false, autoHeight: true }
       }
-    });
+    })
   }
-});
-
-// Кнопка "Показать все" для брендов
-const button = document.querySelector('.show-more');
-const wrapper = document.querySelector('.swiper-wrapper');
-if (button && wrapper) {
-  button.addEventListener('click', () => {
-    const expanded = wrapper.classList.toggle('expanded');
-    button.setAttribute('aria-expanded', expanded);
-    const textSpan = button.querySelector('.show-more__text');
-    if (textSpan) textSpan.textContent = expanded ? 'Скрыть' : 'Показать все';
-  });
-}
+})
