@@ -75,4 +75,14 @@
     height: 20px;
     display: block;
   }
+  // Скрываем лишние кнопки на мобильных
+  @media (max-width: 767px) {
+    .button__call,
+    .button__chat,
+    .button__back,
+    .repair,
+    .checkstatus {
+      display: none !important;
+    }
+  }
 }

@@ -36,7 +36,7 @@
 .divider {
   width: 2px;
   height: 32px;
-  background-color: $color-border;
+  background-color: $divider-color;
   border-radius: 1px;
   flex-shrink: 0;
 }
@@ -54,6 +54,16 @@
   gap: 12px;
 }
 
+// Скрываем лишние кнопки на мобильных
+@media (max-width: 767px) {
+  .button__back,
+  .repair,
+  .checkstatus {
+    display: none;
+  }
+}
+
+// Показываем разделитель для планшета и десктопа
 @media (min-width: 768px) {
   .divider__desktop {
     display: block;

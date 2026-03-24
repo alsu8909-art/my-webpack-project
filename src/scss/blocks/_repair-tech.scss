@@ -22,22 +22,22 @@
 
 .tech {
   margin: 16px auto 0;
-  padding: 0 16px; // внешние отступы по 16px на мобильных
+  padding: 0 16px;
 
   &__list {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 16px; // отступ между карточками на мобильных
+    gap: 16px;
   }
 
   &__card {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 240px; // ширина на мобильных
+    flex-direction: column;
+    justify-content: space-between; // текст вверху, кнопка внизу
+    width: 240px;
     height: 160px;
-    padding: 0 16px;
+    padding: 16px;
     background: $color-white;
     border: $border-2;
     border-radius: 6px;
@@ -49,25 +49,44 @@
       color: $color-text-dark;
     }
 
-    img {
-      width: 40px;
-      height: 40px;
-    }
-
     &:hover {
       border-color: $border-color;
       box-shadow: $box-shadow-hover;
     }
-  }
 
-  &__card button {
-    border: none;
-    background: none;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
+    // Кнопка-стрелка, как в брендах, но прижата к правому нижнему углу
+    &-btn {
+      align-self: flex-end; // прижимаем к правому краю
+      width: 40px;
+      height: 40px;
+      border: 2px solid $btn-pink;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: $transition-default;
+      position: relative;
+      margin-top: auto; // прижимаем к низу
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid $btn-pink;
+        border-bottom: 2px solid $btn-pink;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &:hover {
+        background: $btn-pink;
+        &::after {
+          border-color: $color-white;
+        }
+      }
+    }
   }
 }
 
@@ -122,16 +141,17 @@
   .tech {
     margin-top: 24px;
     overflow: visible;
-    padding: 0 24px; // внешние отступы 24px
+    padding: 0 24px;
 
     &__list {
       display: grid;
-      grid-template-columns: repeat(3, 224px); // ширина карточек 224px
-      gap: 24px; // отступ между карточками
+      grid-template-columns: repeat(3, 224px);
+      gap: 24px;
       width: auto;
       max-height: 160px;
       overflow: hidden;
       transform: none !important;
+      margin: 0 auto;
     }
 
     &__list--full {
@@ -139,7 +159,7 @@
     }
 
     &__card {
-      width: auto; // ширина берётся из грида
+      width: auto;
     }
 
     .swiper-pagination {
@@ -158,22 +178,26 @@
 // =========================================
 @media (min-width: $breakpoint-desktop) {
   .header-menu__title {
-    padding-left: 32px !important;
+    padding-left: 32px;
   }
 
   .tech {
-    padding: 0 32px; // внешние отступы 32px
+    max-width: 1120px;
+    margin: 24px auto 0;
+    padding: 0 32px;
 
     &__list {
-      grid-template-columns: repeat(4, 224px); // ширина карточек 224px
-      gap: 32px; // отступ между карточками
+      grid-template-columns: repeat(4, 240px);
+      gap: 32px;
+      margin: 0 auto;
     }
   }
 
   .show {
-    margin-left: 32px;
+    margin-left: 0;
   }
 }
+
 .repair-tech {
   margin-bottom: 24px;
 }
