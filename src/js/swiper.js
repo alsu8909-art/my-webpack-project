@@ -21,17 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Слайдер цен (если он есть)
-  const priceSwiper = document.querySelector('.price .swiper')
-  if (priceSwiper) {
-    new Swiper('.price .swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      breakpoints: {
-        768: { slidesPerView: 1, allowTouchMove: false, autoHeight: true }
-      }
-    })
-  }
+  //const priceSwiper = document.querySelector('.price .swiper')
+  //if (priceSwiper) {
+  //  new Swiper('.price .swiper', {
+  //   slidesPerView: 'auto',
+  //   spaceBetween: 16,
+  //   pagination: { el: '.swiper-pagination', clickable: true },
+  //  breakpoints: {
+  //    768: { slidesPerView: 1, allowTouchMove: false, autoHeight: true }
+  //   }
+  // })
+  // }
 })
 
 // Кнопка "Показать все" для брендов
