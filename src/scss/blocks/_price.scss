@@ -1,49 +1,57 @@
 .price {
-  padding: 16px;
+  padding-left: $padding-mobile;
+  padding-top: $padding-mobile;
+  margin-left: auto;
+  margin-right: auto;
 
   .head {
     display: none;
   }
 
   &__list {
-    list-style: none;
-    padding: 0;
     display: flex;
-    flex-direction: column;
     gap: 16px;
   }
 
   &__card {
-    background: $color-white;
+    height: 200px;
+    width: 260px;
+    background-color: $color-white;
+    border: $border-2;
     border-radius: 6px;
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    justify-content: space-between;
+    position: relative;
+    transition: $transition-default;
+
+    &:hover {
+      border-color: $border-color;
+      box-shadow: $box-shadow-hover;
+    }
 
     .cell {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-
-      .th {
-        font-size: 14px;
-        color: $color-text-gray;
-      }
-      .td {
-        font-size: 14px;
-        color: $color-text-dark;
-        font-weight: $medium;
-      }
+      flex-direction: column;
+      margin-bottom: 12px;
     }
 
-    .col-4 {
-      display: flex;
-      justify-content: flex-end;
+    .th {
+      font-weight: $medium;
+      color: $color-text-gray;
+      line-height: 20px;
+    }
+
+    .td {
+      font-weight: $regular;
     }
   }
 
   &__order {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
     width: 119px;
     height: 32px;
     border-radius: 16px;
@@ -54,6 +62,7 @@
     justify-content: space-between;
     padding: 0 16px;
     cursor: pointer;
+    transition: $transition-default;
 
     span {
       color: $color-white;
@@ -64,19 +73,39 @@
       width: 8px;
       height: 8px;
     }
+
+    &:focus,
+    &:active {
+      border: 2px solid $border-color;
+      outline: none;
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
   }
 }
 
+// Планшет и десктоп – таблица
 @media (min-width: 768px) {
   .price {
-    overflow-x: auto; // ← добавляем
+    overflow-x: auto;
+    padding-left: $padding-tablet;
+    padding-top: $padding-tablet;
 
     .head {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 0.5fr;
-      padding: 0 16px 16px;
-      font-size: 14px;
+      padding: 16px;
+      margin-top: 32px;
+      font-weight: $medium;
       color: $color-text-gray;
+      min-width: 720px;
+      height: 64px;
+      width: 100%;
     }
 
     &__list {
@@ -89,12 +118,22 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 0.5fr;
       align-items: center;
-      border-radius: 0;
-      border-bottom: 1px solid $color-border;
+      height: auto;
+      width: auto;
       padding: 16px;
+      border-bottom: 1px solid $color-border;
+      border-radius: 0;
+      position: static;
+
+      &:hover {
+        border-color: $color-border;
+        box-shadow: none;
+        transform: none;
+      }
 
       .cell {
         display: block;
+        margin-bottom: 0;
         .th {
           display: none;
         }
@@ -102,9 +141,23 @@
           font-size: 14px;
         }
       }
-      .col-4 {
-        justify-content: flex-start;
+
+      .price__order {
+        position: static;
+        margin-left: 0;
       }
     }
+
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+// Десктоп – увеличенные боковые отступы
+@media (min-width: $breakpoint-desktop) {
+  .price {
+    padding-left: $padding-desktop;
+    padding-right: $padding-desktop;
   }
 }

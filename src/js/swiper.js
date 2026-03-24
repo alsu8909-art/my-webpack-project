@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Слайдер брендов
+  // Слайдер брендов (работает всегда)
   new Swiper('.brands-slider', {
     slidesPerView: 'auto',
     spaceBetween: 16,
@@ -10,28 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Слайдер видов техники
-  const techSwiper = document.querySelector('.tech')
-  if (techSwiper) {
-    new Swiper('.tech', {
+  // Слайдер видов техники (работает всегда)
+  new Swiper('.tech', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    pagination: { el: '.swiper-pagination', clickable: true }
+  })
+
+  // Слайдер цен – только на мобильных (<768px)
+  if (window.innerWidth < 768) {
+    new Swiper('.price .swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
       pagination: { el: '.swiper-pagination', clickable: true }
     })
   }
-
-  // Слайдер цен (если он есть)
-  //const priceSwiper = document.querySelector('.price .swiper')
-  //if (priceSwiper) {
-  //  new Swiper('.price .swiper', {
-  //   slidesPerView: 'auto',
-  //   spaceBetween: 16,
-  //   pagination: { el: '.swiper-pagination', clickable: true },
-  //  breakpoints: {
-  //    768: { slidesPerView: 1, allowTouchMove: false, autoHeight: true }
-  //   }
-  // })
-  // }
 })
 
 // Кнопка "Показать все" для брендов
