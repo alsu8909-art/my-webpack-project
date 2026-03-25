@@ -55,16 +55,16 @@
 }
 
 // Скрываем лишние кнопки на мобильных
-@media (max-width: 767px) {
-  .button__back,
-  .repair,
-  .checkstatus {
+@media (max-width: $tablet) {
+  .header .repair,
+  .header .button__back,
+  .header .checkstatus {
     display: none;
   }
 }
 
 // Показываем разделитель для планшета и десктопа
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .divider__desktop {
     display: block;
     margin-left: 20px;
@@ -79,7 +79,7 @@
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: $desktop) {
   .header {
     display: none;
   }
