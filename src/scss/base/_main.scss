@@ -1,71 +1,28 @@
 // ===============================
-// Мобильное меню (базовые стили)
-// ===============================
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 320px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: $color-white;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-
-  &--active {
-    transform: translateX(0);
-  }
-
-  // ... все ваши внутренние стили (без изменений) ...
-}
-
-.mobile-menu__actions .button__call,
-.mobile-menu__actions .button__chat,
-.mobile-menu__actions .button__back {
-  margin-left: 16px;
-  margin-bottom: 16px;
-}
-
-// Оверлей (только на мобильных)
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
-
-.mobile-menu--active + .menu-overlay {
-  display: block;
-}
-
-// =========================================
 // Десктопная версия (от 1366px)
-// =========================================
+// ===============================
 @media (min-width: $breakpoint-desktop) {
   .layout {
     display: flex;
+    align-items: flex-start; // важно для sticky
     min-height: 100vh;
   }
 
   .mobile-menu {
-    position: static;
+    position: sticky;
+    top: 0;
     width: 320px;
-    transform: none;
+    height: 100vh;
+    overflow-y: auto;
+    transform: none; // отменяем translateX
     box-shadow: none;
     background-color: $color-white;
     border-right: 1px solid $color-border;
-    // Не задаём height – полагаемся на растяжение от flex-родителя
+    justify-content: flex-start;
   }
 
   .mobile-menu--active {
-    transform: none;
+    transform: none; // на десктопе класс не нужен, но на всякий случай
   }
 
   .menu-overlay {
@@ -76,7 +33,21 @@
     display: none;
   }
 
-  // Важно: обёртка контента должна быть внутри .layout
+  .mobile-menu__nav {
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
+  .mobile-menu__actions,
+  .mobile-menu__langs {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .mobile-menu__actions {
+    margin-top: auto; // прижимаем контакты вниз
+  }
+
   .content-wrapper {
     flex: 1;
     display: flex;

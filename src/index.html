@@ -282,7 +282,7 @@
             </div>
             <div class="show">
               <button class="show-more" aria-expanded="false">
-                <img class="show-more__icon" src="img/icon.svg" alt="" />
+                <img class="show-more__icon" src="img/icon3.svg" alt="" />
                 <span class="show-more__text">Показать все</span>
               </button>
             </div>
@@ -323,7 +323,7 @@
                   ></button>
                 </li>
                 <li class="tech__card swiper-slide">
-                  <span>Чистка ПК и ноутбуков</span>
+                  <span>Ремонт телефонов</span>
                   <button
                     class="tech__card-btn"
                     aria-label="Подробнее о чистке ПК и ноутбуков"
@@ -334,7 +334,7 @@
             </div>
             <div class="show">
               <button class="show-more" aria-expanded="false">
-                <img class="show-more__icon" src="img/icon.svg" alt="" />
+                <img class="show-more__icon" src="img/icon3.svg" alt="" />
                 <span class="show-more__text">Показать все</span>
               </button>
             </div>
@@ -369,7 +369,6 @@
                     <div class="col-4">
                       <button class="price__order button">
                         <span>Заказать</span>
-                        <img src="img/dropdown.svg" alt=" " />
                       </button>
                     </div>
                   </li>
@@ -389,7 +388,6 @@
                     <div class="col-4">
                       <button class="price__order button">
                         <span>Заказать</span>
-                        <img src="img/dropdown.svg" alt=" " />
                       </button>
                     </div>
                   </li>
@@ -409,7 +407,6 @@
                     <div class="col-4">
                       <button class="price__order button">
                         <span>Заказать</span>
-                        <img src="img/dropdown.svg" alt=" " />
                       </button>
                     </div>
                   </li>
@@ -431,7 +428,6 @@
                     <div class="col-4">
                       <button class="price__order button">
                         <span>Заказать</span>
-                        <img src="img/dropdown.svg" alt=" " />
                       </button>
                     </div>
                   </li>
@@ -451,7 +447,6 @@
                     <div class="col-4">
                       <button class="price__order button">
                         <span>Заказать</span>
-                        <img src="img/dropdown.svg" alt=" " />
                       </button>
                     </div>
                   </li>
@@ -473,7 +468,8 @@
             >
           </section>
 
-          <!-- Разделительная линия перед футером -->
+
+        <!-- Разделительная линия перед футером -->
           <div class="separator-line"></div>
 
           <!-- Футер -->
@@ -489,12 +485,20 @@
       </div>
     </div>
 
-    <!-- Модалки (вынесены из layout) -->
-    <div class="modal-back">
-      <button class="modal-back__close" aria-label="Закрыть"></button>
-      <div class="modal-back__tongue"></div>
-    </div>
+    <!-- Затемнённый фон -->
+    <div class="modal-back"></div>
 
+    <!-- Десктопная кнопка закрытия (видна только на ≥768px) -->
+    <button
+      class="modal-desktop-close"
+      type="button"
+      aria-label="Закрыть"
+    ></button>
+
+    <!-- Десктопный язычок (виден только на ≥768px) -->
+    <div class="modal-desktop-tongue"></div>
+
+    <!-- Модалка обратной связи -->
     <aside class="modal">
       <form
         action="#"
@@ -502,6 +506,12 @@
         enctype="multipart/form-data"
         class="modal__container"
       >
+        <div class="modal__tongue"></div>
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
         <h2 class="modal__title">Обратная связь</h2>
         <input
           type="text"
@@ -537,12 +547,12 @@
           <a href="#" class="modal__link">политикой конфиденциальности</a>
         </p>
         <button type="submit" class="modal__button button">
-          <span>Заказать</span>
-          <img src="img/dropdown.svg" alt=" " />
+          <span>Отправить</span>
         </button>
       </form>
     </aside>
 
+    <!-- Модалка звонка -->
     <aside class="modal modal-call">
       <form
         action="#"
@@ -550,6 +560,12 @@
         enctype="multipart/form-data"
         class="modal__container"
       >
+        <div class="modal__tongue"></div>
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Закрыть"
+        ></button>
         <h2 class="modal__title">Заказать звонок</h2>
         <input
           type="tel"
@@ -565,8 +581,7 @@
           <a href="#" class="modal__link">политикой конфиденциальности</a>
         </p>
         <button type="submit" class="modal__button button">
-          <span>Заказать</span>
-          <img src="img/dropdown.svg" alt=" " />
+          <span>Отправить</span>
         </button>
       </form>
     </aside>

@@ -67,11 +67,31 @@
     span {
       color: $color-white;
       font-size: 12px;
+      transition: color 0.2s ease;
     }
 
-    img {
+    // Стрелка рисуется через CSS
+    &::after {
+      content: '';
+      display: inline-block;
       width: 8px;
       height: 8px;
+      border-right: 2px solid $color-white;
+      border-bottom: 2px solid $color-white;
+      transform: rotate(-45deg);
+      transition: border-color 0.2s ease;
+    }
+
+    // Убираем img, если он был в HTML (нужно удалить из HTML)
+
+    &:hover {
+      background-color: $color-white;
+      span {
+        color: $btn-pink;
+      }
+      &::after {
+        border-color: $btn-pink;
+      }
     }
 
     &:focus,
@@ -81,9 +101,11 @@
     }
   }
 
+  // Пагинация Swiper – остаётся
   .swiper-pagination {
     position: relative;
     margin-top: 16px;
+
     display: flex;
     justify-content: center;
   }
@@ -93,7 +115,7 @@
 @media (min-width: 768px) {
   .price {
     overflow-x: auto;
-    padding-left: $padding-tablet;
+    padding-left: 0;
     padding-top: $padding-tablet;
 
     .head {
@@ -122,7 +144,7 @@
       width: auto;
       padding: 16px;
       border-bottom: 1px solid $color-border;
-      border-radius: 0;
+      border-radius: 6px;
       position: static;
 
       &:hover {
@@ -148,6 +170,7 @@
       }
     }
 
+    // На планшете/десктопе пагинация не нужна
     .swiper-pagination {
       display: none;
     }
@@ -157,7 +180,7 @@
 // Десктоп – увеличенные боковые отступы
 @media (min-width: $breakpoint-desktop) {
   .price {
-    padding-left: $padding-desktop;
+    padding-left: 0;
     padding-right: $padding-desktop;
   }
 }

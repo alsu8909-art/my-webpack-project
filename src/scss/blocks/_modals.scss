@@ -1,66 +1,78 @@
 // ===============================
 // Модальные окна
 // ===============================
+
+// Затемнённый фон
 .modal-back {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $background-3;
   z-index: 1000;
   display: none;
+}
 
-  // Кнопка закрытия (круглая розовая с крестиком)
-  &__close {
+// Десктопная кнопка закрытия (на фоне, видна только при открытой модалке)
+.modal-desktop-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $btn-pink;
+  border: none;
+  display: none; // скрыта по умолчанию
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1002;
+  transition: $transition-default;
+
+  &::before,
+  &::after {
+    content: '';
     position: absolute;
-    top: 24px;
-    left: 24px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: $btn-pink;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1010;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 20px;
-      background-color: $color-white;
-      border-radius: 1px;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-    }
+    width: 2px;
+    height: 20px;
+    background-color: $color-white;
+    border-radius: 1px;
   }
-
-  // Бирюзовый язычок (вертикальная полоска)
-  &__tongue {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 32px;
-    background-color: $border-color;
-    border-radius: 6px;
-    z-index: 1010;
-    pointer-events: none; // чтобы не мешать кликам по фону
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
   }
 }
 
+// Десктопный язычок (на фоне, виден только при открытой модалке)
+.modal-desktop-tongue {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 32px;
+  background-color: $border-color;
+  border-radius: 6px;
+  z-index: 1002;
+  pointer-events: none;
+  display: none; // скрыт по умолчанию
+}
+
+// Показываем десктопные элементы только когда фон видим (модалка открыта)
+.modal-back[style*='display: block'] ~ .modal-desktop-close,
+.modal-back[style*='display: block'] ~ .modal-desktop-tongue {
+  display: flex;
+}
+.modal-desktop-tongue {
+  display: block; // для язычка нужен block
+}
+
+// Модальное окно (общие стили)
 .modal {
   position: fixed;
   top: 0;
@@ -71,7 +83,7 @@
   background: $color-white;
   z-index: 1001;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: $transition-default;
   overflow-y: auto;
   visibility: hidden;
 
@@ -80,6 +92,7 @@
     visibility: visible;
   }
 
+  // На мобильных – на всю ширину
   @media (max-width: 767px) {
     max-width: none;
     width: 100%;
@@ -89,16 +102,65 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+
+  // Внутренний язычок (только для мобильных)
+  &__tongue {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 32px;
+    background-color: $border-color;
+    border-radius: 6px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  // Внутренняя кнопка закрытия (только для мобильных)
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $btn-pink;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background-color: $color-white;
+      border-radius: 1px;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 
   &__title {
     font-size: 24px;
     font-weight: $bold;
     margin: 16px 0 24px 0;
+    margin-right: 40px;
   }
 
   &__input {
-    border: 1px solid $color-border;
+    border: $color-border;
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 16px;
@@ -138,10 +200,39 @@
       color: $color-white;
       font-size: 12px;
     }
-
-    img {
-      width: 8px;
-      height: 8px;
-    }
   }
+}
+
+// Модалка звонка (специфичные стили)
+.modal-call {
+  .modal__input {
+    margin-top: 16px;
+  }
+}
+
+// =========================================
+// Переключение видимости по брейкпоинтам
+// =========================================
+@media (max-width: 767px) {
+  // На мобильных: показываем внутренние элементы, скрываем десктопные
+  .modal__close,
+  .modal__tongue {
+    display: flex;
+  }
+  .modal__tongue {
+    display: block;
+  }
+  .modal-desktop-close,
+  .modal-desktop-tongue {
+    display: none !important; // гарантированно скрыты
+  }
+}
+
+@media (min-width: 768px) {
+  // На планшете/десктопе: скрываем внутренние элементы
+  .modal__close,
+  .modal__tongue {
+    display: none;
+  }
+  // Десктопные элементы показываются только через селектор выше (когда модалка открыта)
 }

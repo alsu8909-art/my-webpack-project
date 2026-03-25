@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCall = document.querySelector('.modal-call')
   const modalFeedback = document.querySelector('.modal')
   const modalBack = document.querySelector('.modal-back')
-  const closeBackBtn = document.querySelector('.modal-back__close')
+  const closeBtns = document.querySelectorAll(
+    '.modal__close, .modal-desktop-close'
+  ) // добавлен десктопный класс
 
   if (!modalCall || !modalFeedback || !modalBack) return
 
@@ -33,15 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   )
 
-  if (closeBackBtn) {
-    closeBackBtn.addEventListener('click', closeAllModals)
-  }
+  closeBtns.forEach((btn) => btn.addEventListener('click', closeAllModals))
 
-  modalBack.addEventListener('click', (e) => {
-    if (e.target === modalBack) {
-      closeAllModals()
-    }
-  })
+  modalBack.addEventListener('click', closeAllModals)
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAllModals()

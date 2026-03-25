@@ -9,16 +9,21 @@
     flex-shrink: 0;
     height: 40px;
     padding: 0 16px;
-    border-radius: 0;
-    border: none;
+    border-radius: 6px;
+    border: 2px solid transparent;
     background-color: $color-bg-light;
     cursor: pointer;
     white-space: nowrap;
     font-size: 16px;
+    transition: $transition-default;
+
+    &:hover {
+      border-color: $border-color;
+      box-shadow: $box-shadow-hover;
+    }
 
     &:first-child {
       border: 2px solid $border-color;
-      border-radius: 6px;
       background-color: $color-white;
     }
   }
@@ -40,11 +45,12 @@
   white-space: nowrap;
   color: $color-text-gray;
   font-size: 16px;
+  transition: $transition-default;
+  border-radius: 6px;
 }
 
 .button1 {
   width: 246px;
-  border-radius: 6px;
   border: 2px solid $border-color;
 }
 .button2 {
@@ -77,15 +83,40 @@
 
 @media (min-width: 1120px) {
   .slidemenu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    overflow: visible;
+    gap: 10px;
     margin-left: 32px;
+    margin-right: 32px;
+    overflow: visible;
+    flex-wrap: wrap;
   }
 
+  .button1,
+  .button2,
+  .button3,
+  .button4,
+  .button5,
   .button6 {
-    flex-basis: 100%;
-    max-width: fit-content;
+    margin-left: 0; // убираем отступы, чтобы не мешали расчёту
+  }
+
+  .button1 {
+    width: 233px;
+  }
+  .button2 {
+    width: 215px;
+  }
+  .button3 {
+    width: 152px;
+  }
+  .button4 {
+    width: 233px;
+  }
+  .button5 {
+    width: 191px;
+  }
+  .button6 {
+    width: 95px;
+    flex-basis: 100%; // заставляет перенестись на новую строку
+    max-width: fit-content; // не растягивается на всю ширину
   }
 }

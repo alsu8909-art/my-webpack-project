@@ -189,7 +189,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $background-2;
+  background-color: $background-3;
   z-index: 999;
   display: none;
 }
@@ -204,11 +204,13 @@
 @media (min-width: $breakpoint-desktop) {
   .layout {
     display: flex;
-    min-height: 100vh; // или min-height: 100%
+    min-height: 100vh;
   }
 
   .mobile-menu {
-    position: static;
+    position: fixed; // вместо static – фиксируем меню слева
+    top: 0;
+    left: 0;
     width: 320px;
     height: 100%; // растягивается на всю высоту родителя
     transform: none;
@@ -231,9 +233,9 @@
   }
 
   .mobile-menu__nav {
-    flex: 0 0 auto !important;
+    flex: 1 1 auto;
+    overflow-y: auto;
   }
-
   .mobile-menu__actions,
   .mobile-menu__langs {
     margin-top: 0 !important;
@@ -244,6 +246,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    margin-left: 320px; // ← добавляем отступ, равный ширине меню
   }
 
   .main-container {
