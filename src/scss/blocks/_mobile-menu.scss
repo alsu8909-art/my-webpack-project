@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   background-color: $color-white;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: $box-shadow-mn;
   z-index: 1000;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
@@ -180,9 +180,8 @@
   margin-bottom: 0;
 }
 
-// =========================================
 // Оверлей (тёмный фон) – только на мобильных
-// =========================================
+
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -198,9 +197,8 @@
   display: block;
 }
 
-// =========================================
-// Десктопная версия (от 1366px)
-// =========================================
+// Десктопная версия от 1366px
+
 @media (min-width: $breakpoint-desktop) {
   .layout {
     display: flex;
@@ -208,7 +206,7 @@
   }
 
   .mobile-menu {
-    position: fixed; // вместо static – фиксируем меню слева
+    position: fixed; //  фиксируем меню слева
     top: 0;
     left: 0;
     width: 320px;
@@ -246,7 +244,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 320px; // ← добавляем отступ, равный ширине меню
+    margin-left: 320px;
   }
 
   .main-container {

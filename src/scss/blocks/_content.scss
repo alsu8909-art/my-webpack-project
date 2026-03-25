@@ -37,7 +37,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .content {
     display: flex;
     gap: 24px;
@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: $desktop) {
   .content {
     &__text {
       display: flex;

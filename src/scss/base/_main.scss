@@ -1,10 +1,7 @@
-// ===============================
-// Десктопная версия (от 1366px)
-// ===============================
 @media (min-width: $breakpoint-desktop) {
   .layout {
     display: flex;
-    align-items: flex-start; // важно для sticky
+    align-items: flex-start;
     min-height: 100vh;
   }
 
@@ -14,7 +11,7 @@
     width: 320px;
     height: 100vh;
     overflow-y: auto;
-    transform: none; // отменяем translateX
+    transform: none;
     box-shadow: none;
     background-color: $color-white;
     border-right: 1px solid $color-border;
@@ -22,7 +19,7 @@
   }
 
   .mobile-menu--active {
-    transform: none; // на десктопе класс не нужен, но на всякий случай
+    transform: none;
   }
 
   .menu-overlay {
@@ -45,7 +42,7 @@
   }
 
   .mobile-menu__actions {
-    margin-top: auto; // прижимаем контакты вниз
+    margin-top: auto;
   }
 
   .content-wrapper {

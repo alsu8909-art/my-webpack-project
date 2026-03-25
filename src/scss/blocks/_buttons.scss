@@ -63,7 +63,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $tablet) {
   .button__call,
   .button__back {
     display: flex;

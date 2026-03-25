@@ -1,4 +1,5 @@
-// src/scss/vendors/_swiper.scss
+.prise,
+.tech,
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -7,5 +8,5 @@
   border-radius: 50%;
 }
 .swiper-pagination-bullet-active {
-  background: $btn-pink; // переменная из _variables
+  background: $btn-pink;
 }

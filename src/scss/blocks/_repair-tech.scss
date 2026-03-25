@@ -1,6 +1,5 @@
-// ===============================
 // Блок ремонта техники
-// ===============================
+
 .header-menu {
   display: flex;
   align-items: center;
@@ -20,8 +19,15 @@
 }
 
 .tech {
+  margin-right: 16px;
   margin: 16px auto 0;
-  padding: 0 16px;
+  .swiper-slide {
+    width: 240px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
   &__list {
     list-style: none;
@@ -125,9 +131,6 @@
   }
 }
 
-// =========================================
-// Планшет (от 768px)
-// =========================================
 @media (min-width: $breakpoint-tablet) {
   .header-menu {
     height: 56px;
@@ -139,8 +142,8 @@
   .tech {
     margin-top: 24px;
     overflow: visible;
-    // Левый отступ 24px, правый 16px (как у брендов на планшете)
-    padding: 0 16px 0 2px;
+
+    padding: 0 16px;
 
     &__list {
       display: grid;
@@ -172,9 +175,6 @@
   }
 }
 
-// =========================================
-// Десктоп (от 1366px)
-// =========================================
 @media (min-width: $breakpoint-desktop) {
   .header-menu__title {
     padding-left: 32px;
@@ -183,9 +183,8 @@
   .tech {
     max-width: 1120px;
     margin: 24px auto 0;
-    // Левый отступ 32px, правый 16px (как у брендов на десктопе)
-    padding: 0 16px 0 3px;
 
+    padding: 0 16px 0 3px;
     &__list {
       grid-template-columns: repeat(4, 240px);
       gap: 32px;

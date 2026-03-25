@@ -1,20 +1,9 @@
-// ===========================
-// 1. Базовые настройки
-// ===========================
 @import 'base/variables';
 @import 'base/reset';
 @import 'base/fonts';
-@import 'base/typography';
+
 @import 'base/main';
 
-// ===========================
-// 2. Сторонние библиотеки (Swiper)
-// ===========================
-//@import 'vendors/swiper';
-
-// ===========================
-// 3. Стили блоков (компонентов)
-// ===========================
 @import 'blocks/buttons';
 @import 'blocks/header';
 @import 'blocks/mobile-menu';

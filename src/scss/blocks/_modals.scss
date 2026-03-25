@@ -1,6 +1,4 @@
-// ===============================
 // Модальные окна
-// ===============================
 
 // Затемнённый фон
 .modal-back {
@@ -14,7 +12,7 @@
   display: none;
 }
 
-// Десктопная кнопка закрытия (на фоне, видна только при открытой модалке)
+// Десктопная кнопка закрытия
 .modal-desktop-close {
   position: fixed;
   top: 24px;
@@ -63,16 +61,16 @@
   display: none; // скрыт по умолчанию
 }
 
-// Показываем десктопные элементы только когда фон видим (модалка открыта)
+// Показываем десктопные элементы - модалка открыта
 .modal-back[style*='display: block'] ~ .modal-desktop-close,
 .modal-back[style*='display: block'] ~ .modal-desktop-tongue {
   display: flex;
 }
 .modal-desktop-tongue {
-  display: block; // для язычка нужен block
+  display: block;
 }
 
-// Модальное окно (общие стили)
+// Модальное окно общие стили
 .modal {
   position: fixed;
   top: 0;
@@ -105,7 +103,6 @@
     position: relative;
   }
 
-  // Внутренний язычок (только для мобильных)
   &__tongue {
     position: absolute;
     left: 0;
@@ -119,7 +116,6 @@
     pointer-events: none;
   }
 
-  // Внутренняя кнопка закрытия (только для мобильных)
   &__close {
     position: absolute;
     top: 24px;
@@ -203,18 +199,13 @@
   }
 }
 
-// Модалка звонка (специфичные стили)
 .modal-call {
   .modal__input {
     margin-top: 16px;
   }
 }
 
-// =========================================
-// Переключение видимости по брейкпоинтам
-// =========================================
 @media (max-width: 767px) {
-  // На мобильных: показываем внутренние элементы, скрываем десктопные
   .modal__close,
   .modal__tongue {
     display: flex;
@@ -224,15 +215,13 @@
   }
   .modal-desktop-close,
   .modal-desktop-tongue {
-    display: none !important; // гарантированно скрыты
+    display: none !important;
   }
 }
 
 @media (min-width: 768px) {
-  // На планшете/десктопе: скрываем внутренние элементы
   .modal__close,
   .modal__tongue {
     display: none;
   }
-  // Десктопные элементы показываются только через селектор выше (когда модалка открыта)
 }

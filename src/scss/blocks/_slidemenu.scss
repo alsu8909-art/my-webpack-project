@@ -70,7 +70,7 @@
   background-color: $color-bg-light;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-tablet) {
   .button1,
   .button2,
   .button3,
@@ -81,7 +81,7 @@
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: $breakpoint-desktop) {
   .slidemenu {
     gap: 10px;
     margin-left: 32px;
@@ -96,7 +96,7 @@
   .button4,
   .button5,
   .button6 {
-    margin-left: 0; // убираем отступы, чтобы не мешали расчёту
+    margin-left: 0;
   }
 
   .button1 {
@@ -116,7 +116,7 @@
   }
   .button6 {
     width: 95px;
-    flex-basis: 100%; // заставляет перенестись на новую строку
-    max-width: fit-content; // не растягивается на всю ширину
+    flex-basis: 100%;
+    max-width: fit-content;
   }
 }
