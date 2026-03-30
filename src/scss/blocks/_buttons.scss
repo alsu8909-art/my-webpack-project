@@ -30,6 +30,7 @@
   cursor: pointer;
   flex-shrink: 0;
   position: relative;
+  margin-right: 50px;
 }
 
 .menu__burger {
@@ -80,6 +81,12 @@
     .repair,
     .checkstatus {
       display: none;
+    }
+  }
+  @media (min-width: 1120px) {
+    .repair-1120,
+    .checkstatus-1120 {
+      left: 30px;
     }
   }
 }

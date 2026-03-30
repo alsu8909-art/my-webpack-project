@@ -14,7 +14,7 @@
     line-height: 24px;
     letter-spacing: -0.2px;
     text-transform: uppercase;
-    color: $color-text-gray;
+    color: $text-color-2;
   }
 }
 
@@ -135,7 +135,7 @@
   .header-menu {
     height: 56px;
     &__title {
-      padding-left: 16px;
+      padding-left: 24px;
     }
   }
 
@@ -177,14 +177,15 @@
 
 @media (min-width: $breakpoint-desktop) {
   .header-menu__title {
-    padding-left: 24px;
+    padding-left: 32px; // как у брендов, если нужно
   }
-
   .tech {
-    //max-width: 1120px;
     margin: 24px auto 0;
+    // если хотите ограничить ширину:
+    // max-width: $breakpoint-desktop;
+    padding-left: 0; // убираем левый отступ, оставляем только от родительского контейнера
+    padding-right: 0; // убираем правый отступ
 
-    padding: 0 16px 0 3px;
     &__list {
       grid-template-columns: repeat(4, 240px);
       gap: 32px;
@@ -195,8 +196,4 @@
   .show {
     margin-left: 0;
   }
-}
-
-.repair-tech {
-  margin-bottom: 24px;
 }

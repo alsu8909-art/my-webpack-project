@@ -16,7 +16,7 @@
 .modal-desktop-close {
   position: fixed;
   top: 24px;
-  right: 24px;
+  right: 320px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -47,19 +47,19 @@
 }
 
 // Десктопный язычок (на фоне, виден только при открытой модалке)
-.modal-desktop-tongue {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 32px;
-  background-color: $border-color;
-  border-radius: 6px;
-  z-index: 1002;
-  pointer-events: none;
-  display: none; // скрыт по умолчанию
-}
+//.modal-desktop-tongue {
+// position: sticky;
+//left: 0;
+//top: 50%;
+//transform: translateY(-50%);
+//width: 4px;
+//height: 32px;
+//background-color: $btn-pink;
+//border-radius: 6px;
+//z-index: 1002;
+//pointer-events: none;
+//display: none; // скрыт по умолчанию
+//}
 
 // Показываем десктопные элементы - модалка открыта
 .modal-back[style*='display: block'] ~ .modal-desktop-close,
@@ -195,16 +195,41 @@
     span {
       color: $color-white;
       font-size: 12px;
+      transition: color 0.2s ease;
+    }
+
+    // Стрелка, как в брендах (уголок)
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid $color-white;
+      border-bottom: 2px solid $color-white;
+      transform: rotate(-45deg);
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    &:hover {
+      background-color: $color-white;
+      span {
+        color: $btn-pink;
+      }
+      &::after {
+        border-color: $btn-pink;
+        transform: rotate(-45deg) translateX(2px);
+      }
+    }
+  }
+
+  .modal-call {
+    .modal__input {
+      margin-top: 16px;
     }
   }
 }
-
-.modal-call {
-  .modal__input {
-    margin-top: 16px;
-  }
-}
-
 @media (max-width: 767px) {
   .modal__close,
   .modal__tongue {

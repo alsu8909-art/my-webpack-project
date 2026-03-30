@@ -12,15 +12,25 @@ html {
 }
 
 body {
-  height: 100%;
-  height: 100%;
-  flex-direction: column;
-  display: block;
+  width: 100%; // ← Добавьте это
+  min-height: 100%;
+  margin: 0; // ← Убедитесь, что отступов нет
+  padding: 0; // ← Убедитесь, что отступов нет
   font-family: $font-family-base;
   line-height: 1.4;
   background-color: $color-bg-light;
 }
 
+// Добавьте обнуление для родительских контейнеров
+.layout,
+.content-wrapper,
+.main-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// Остальные стили
 .text,
 .content__desktop,
 .content__1120 {

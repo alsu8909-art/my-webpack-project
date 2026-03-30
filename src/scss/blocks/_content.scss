@@ -7,94 +7,109 @@
     flex-direction: column;
   }
 
-  &__desktop,
-  &__1120 {
+  .readmore {
     display: none;
   }
 
-  .readmore {
-    display: none;
+  .readmore__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+    font-weight: 500;
 
-    &:checked ~ .content__desktop,
-    &:checked ~ .content__1120 {
-      display: block;
+    img {
+      width: 20px;
+      transition: transform 0.3s ease;
     }
   }
 
-  .readmore__readmoremb {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+  /* 📱 MOBILE */
+  .content__desktop {
+    display: block;
+    margin-top: 16px;
   }
 
-  .picture__copy {
-    width: 100%;
-    height: auto;
-    margin: 16px 0 35px 0;
+  .content__1120 {
+    display: none;
+  }
+
+  /* раскрытие */
+  #readmoremb:checked ~ .content__1120 {
     display: block;
+    margin-top: 16px;
+  }
+
+  /* стрелка */
+  #readmoremb:checked ~ .readmore__btn img {
+    transform: rotate(180deg);
+  }
+
+  /* текст кнопки */
+  .btn-text::after {
+    content: 'Читать далее';
+  }
+
+  #readmoremb:checked ~ .readmore__btn .btn-text::after {
+    content: 'Скрыть';
+  }
+
+  .picture {
+    width: 100%;
+    margin: 16px 0;
   }
 }
-
-@media (min-width: $tablet) {
+@media (min-width: 768px) {
   .content {
     display: flex;
     gap: 24px;
     padding: 0 24px;
-    align-items: flex-start;
 
     &__text {
-      display: flex;
-      flex-direction: column;
+      flex: 1;
+      margin: 0;
     }
 
-    .readmore {
-      margin-top: 16px;
+    .picture {
+      width: 360px;
+      height: 208px;
+      object-fit: cover;
+      border-radius: 8px;
     }
 
-    .readmore__readmoremb {
-      order: 1;
-    }
-
+    /* логика та же */
     .content__desktop {
       display: block;
-      margin-top: 16px;
     }
 
     .content__1120 {
       display: none;
     }
 
-    .picture__copy {
-      width: 360px;
-      height: 208px;
-      border-radius: 8px;
-      margin: 0;
+    #readmoremb:checked ~ .content__1120 {
+      display: block;
     }
   }
 }
-
-@media (min-width: $desktop) {
+@media (min-width: 1120px) {
   .content {
-    &__text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .readmore__readmoremb {
-      order: 10;
-      margin-top: 16px;
-    }
-
     .content__desktop,
     .content__1120 {
-      display: block;
+      display: block; // весь текст сразу
     }
 
-    .picture__copy {
+    //.readmore__btn {
+    // display: none; // кнопка не нужна
+    //}
+
+    .picture {
       width: 531px;
       height: 307px;
+    }
+
+    &__text {
+      max-width: 490px;
     }
   }
 }

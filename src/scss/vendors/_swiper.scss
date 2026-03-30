@@ -1,5 +1,4 @@
-.prise,
-.tech,
+// Убираем .prise, .tech – они не должны влиять на точки
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -7,6 +6,8 @@
   opacity: 1;
   border-radius: 50%;
 }
+
 .swiper-pagination-bullet-active {
-  background: $btn-pink;
+  background: $btn-pink; // если $btn-pink не задана – замените на #e91e63 или #ff69b4
+  box-shadow: 0 0 10px 3px $btn-pink; // розовое свечение
 }

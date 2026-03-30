@@ -88,12 +88,14 @@
   background: $swiper;
   opacity: 1;
   border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
-
+.swiper-pagination-bullet-active {
+  background: $btn-pink; // Укажите ваш цвет, например: #ff0000, blue, etc.
+}
 .swiper-pagination {
   position: static;
   margin-top: 16px;
-
   display: flex;
   justify-content: center;
 }
