@@ -1,15 +1,31 @@
 .slidemenu {
   display: flex;
-  flex-direction: column; // колонка, чтобы первая и вторая строки были вертикально
+  flex-direction: column;
   gap: 10px;
   margin: 24px 16px;
 
   .slidemenu__first-row {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap; // никогда не переносим первые 5 кнопок
-    overflow-x: hidden; // убираем скролл
+    flex-wrap: nowrap;
+    overflow-x: auto; // скролл на мобильных
+    overflow-y: hidden; // скрываем вертикальный скролл
     justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; // плавный скролл на iOS
+
+    // Стилизация скроллбара (опционально)
+    scrollbar-width: thin; // для Firefox
+    &::-webkit-scrollbar {
+      height: 4px; // высота скроллбара
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-bg-light;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $btn-pink;
+      border-radius: 2px;
+    }
 
     button {
       height: 40px;
@@ -22,6 +38,7 @@
       white-space: nowrap;
       cursor: pointer;
       transition: $transition-default;
+      flex-shrink: 0;
 
       &:hover {
         border-color: $border-color;
@@ -48,11 +65,13 @@
     .button5 {
       width: 191px;
     }
+    .button6 {
+      width: 95px; // добавляем 6-ю кнопку в первую строку на мобильных
+    }
   }
 
   .slidemenu__second-row {
-    display: flex;
-    margin-top: 10px;
+    display: none; // скрываем вторую строку на мобильных
 
     .button6 {
       flex: 0 0 auto;
@@ -80,8 +99,22 @@
     margin: 24px 24px;
   }
 
+  // На десктопе (1120px и выше) переносим 6-ю кнопку во вторую строку
   @media (min-width: 1120px) {
     margin-left: auto;
     margin-right: auto;
+
+    .slidemenu__first-row {
+      overflow-x: visible; // убираем скролл
+      flex-wrap: wrap; // разрешаем перенос
+
+      .button6 {
+        display: none; // скрываем 6-ю кнопку из первой строки
+      }
+    }
+
+    .slidemenu__second-row {
+      display: flex; // показываем вторую строку
+    }
   }
 }
