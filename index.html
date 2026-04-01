@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <title>CPS Services</title>
-  <link href="./style.css" rel="stylesheet"></head>
+  <link href="style.css" rel="stylesheet"></head>
   <body>
     <div class="layout">
       
@@ -109,39 +109,48 @@
 
           
           <div class="slidemenu">
-            <button class="button1">Ремонтируемые бренды</button>
-            <button class="button2">Ремонтируемые устройства</button>
-            <button class="button3">Цены на услуги</button>
-            <button class="button4">Адреса сервисных центров</button>
-            <button class="button5">Специальные цены</button>
-            <button class="button6">Отзывы</button>
-          </div>
-
+  <div class="slidemenu__first-row">
+    <button class="button1">Ремонтируемые бренды</button>
+    <button class="button2">Ремонтируемые устройства</button>
+    <button class="button3">Цены на услуги</button>
+    <button class="button4">Адреса сервисных центров</button>
+    <button class="button5">Специальные цены</button>
+  </div>
+  <div class="slidemenu__second-row">
+    <button class="button6">Отзывы</button>
+  </div>
+</div>
           
           <section class="content">
-            <div class="content__text">
-              <p class="text">
-                Мы являемся авторизованным сервисным центром по ремонту техники
-                Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
-                официальной гарантией производителя.
-              </p>
-              <input type="checkbox" id="readmoremb" class="readmore">
-              <label for="readmoremb" class="readmore__readmoremb">
-                <img class="readmore-img" src="img/expand.svg" alt="читать далее">
-                Читать далее
-              </label>
-              <p class="content__desktop">
-                Мы успешно работаем с 1992 года и заслужили репутацию надежного
-                партнера
-              </p>
-              <p class="content__1120">
-                что подтверждает большое количество постоянных клиентов. Мы
-                гордимся тем, что к нам обращаются по рекомендациям и, в свою
-                очередь, советуют нас родным и близким.
-              </p>
-            </div>
-            <img class="picture__copy" src="img/Picture Copy.jpg" alt="Вывеска с логотипом и временем работы">
-          </section>
+  <div class="content__text">
+    
+    <input type="checkbox" id="readmoremb" class="readmore">
+
+    <p class="text">
+      Мы являемся авторизованным сервисным центром по ремонту техники Dell.
+      Только у нас вы можете отремонтировать свой ноутбук Dell с официальной
+      гарантией производителя.
+    </p>
+
+    <p class="content__desktop">
+      Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
+      что подтверждает большое количество постоянных клиентов.
+    </p>
+
+    <p class="content__1120">
+      Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
+      советуют нас родным и близким.
+    </p>
+
+    
+    <label for="readmoremb" class="readmore__btn">
+      <img src="img/expand.svg" alt="">
+      <span class="btn-text"></span>
+    </label>
+  </div>
+
+  <img class="picture" src="img/Picture Copy.jpg" alt="Вывеска с логотипом и временем работы">
+</section>
 
           
           <header class="header-menu">
@@ -456,5 +465,6 @@
     </aside>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     
-  <script type="text/javascript" src="././js/bundle.js"></script></body>
+  <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
+
